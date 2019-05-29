@@ -1,23 +1,43 @@
-import React from 'react';
-import './App.css';
+import React from "react"
 
-const App = () => {
-  return (
-    <div>
-      <h3>Welcome to React Calculator</h3>
-      <p>
-        We have given you a starter project. You'll want to build out your
-        components in their respective files, remove this code and replace it
-        with the proper components.
-      </p>
-      <p>
-        <strong>
-          Don't forget to `default export` your components and import them here
-          inside of this file in order to make them work.
-        </strong>
-      </p>
-    </div>
-  );
-};
+import "./App.scss"
 
-export default App;
+import useCalculatorReducer, { actionFactory } from "./reducer"
+
+import Button from "./components/Button"
+import Display from "./components/Display"
+import NumericButtons from "./components/NumericButtons"
+import OperatorButtons from "./components/OperatorButtons"
+
+const Calculator = () => {
+    const [{ displayValue }, dispatch] = useCalculatorReducer()
+
+    return (
+        <div className="calculator">
+            <Display>{displayValue}</Display>
+            <Button handleClick={() => dispatch(actionFactory("reset"))}>
+                clear
+            </Button>
+            <NumericButtons
+                handleClick={num =>
+                    dispatch(actionFactory("updateDisplay", num))
+                }
+            />
+            <OperatorButtons
+                handleClick={(operator, operation) =>
+                    dispatch(
+                        actionFactory("executeOperation", {
+                            operator,
+                            operation
+                        })
+                    )
+                }
+            />
+            <Button handleClick={() => dispatch(actionFactory("evaluate"))}>
+                {"\u003d"}
+            </Button>
+        </div>
+    )
+}
+
+export default Calculator

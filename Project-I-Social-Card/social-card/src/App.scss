@@ -1,0 +1,10 @@
+.social-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    padding-left: calc((1.6rem * 2 + 5rem));
+    background: #fff;
+    box-shadow: 12px 12px 24px -24px rgba(19, 19, 19, 0.507);
+    border-radius: 4px;
+    position: relative;
+}

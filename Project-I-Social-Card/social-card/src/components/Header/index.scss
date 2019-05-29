@@ -1,0 +1,53 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 5rem;
+    margin: 1.6rem;
+    background-image: url(../../assets/lambdacrest.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.header .meta {
+    padding-bottom: 1.6rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    font-size: 1.4rem;
+
+    .author {
+        font-weight: bold;
+    }
+
+    .handle {
+        padding-left: 0.4rem;
+        color: rgb(155, 151, 151);
+
+        &:before {
+            content: "@";
+        }
+
+        &:after {
+            content: "·";
+            padding: 0 0.4rem;
+        }
+    }
+
+    .timestamp {
+        font-size: 1.2rem;
+        color: rgb(155, 151, 151);
+    }
+}
+
+.header .description {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
