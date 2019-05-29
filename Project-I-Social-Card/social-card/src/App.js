@@ -1,5 +1,8 @@
 import React from "react"
-import "./App.css"
+
+import "./App.scss"
+
+import Header from "./components/Header"
 
 const App = () => {
     return (
@@ -18,6 +21,8 @@ const App = () => {
                     them here inside of this file in order to make them work.
                 </strong>
             </p>
+            <hr />
+            <Header />
         </div>
     )
 }
