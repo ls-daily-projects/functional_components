@@ -3,6 +3,7 @@ import React from "react"
 import "./App.scss"
 
 import Header from "./components/Header"
+import Card from "./components/Card"
 
 const App = () => {
     return (
@@ -22,7 +23,10 @@ const App = () => {
                 </strong>
             </p>
             <hr />
-            <Header />
+            <div className="social-card">
+                <Header />
+                <Card />
+            </div>
         </div>
     )
 }
