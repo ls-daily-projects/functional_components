@@ -4,6 +4,7 @@ import "./App.scss"
 
 import Header from "./components/Header"
 import Card from "./components/Card"
+import Footer from "./components/Footer"
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
             <div className="social-card">
                 <Header />
                 <Card />
+                <Footer />
             </div>
         </div>
     )
